@@ -11,7 +11,7 @@ public class MenuPrincipal implements WindowListener, ActionListener {
     Menu mnuExposicion = new Menu("Exposiciones");
     Menu mnuVisitante = new Menu("Visitantes");
 
-    // Opciones CRUD para cada tabla
+
     MenuItem mniAltaMuseo = new MenuItem("Alta");
     MenuItem mniBajaMuseo = new MenuItem("Baja");
     MenuItem mniModificarMuseo = new MenuItem("Modificar");
@@ -27,17 +27,17 @@ public class MenuPrincipal implements WindowListener, ActionListener {
     MenuItem mniModificarVisitante = new MenuItem("Modificar");
     MenuItem mniConsultaVisitante = new MenuItem("Consulta");
 
-    private int tipoUsuario; // Variable para almacenar el tipo de usuario
+    private int tipoUsuario; 
 
     public MenuPrincipal(int tipoUsuario) {
-        this.tipoUsuario = tipoUsuario; // Guardamos el tipo de usuario
+        this.tipoUsuario = tipoUsuario; 
 
         ventana.setLayout(new FlowLayout());
         ventana.setSize(400, 250);
         ventana.addWindowListener(this);
         ventana.setMenuBar(barraMenu);
 
-        // Agregar opciones de Museos
+     
         mniAltaMuseo.addActionListener(this);
         mniBajaMuseo.addActionListener(this);
         mniModificarMuseo.addActionListener(this);
@@ -47,7 +47,7 @@ public class MenuPrincipal implements WindowListener, ActionListener {
         mnuMuseo.add(mniModificarMuseo);
         mnuMuseo.add(mniConsultaMuseo);
 
-        // Agregar opciones de Exposiciones
+      
         mniAltaExposicion.addActionListener(this);
         mniBajaExposicion.addActionListener(this);
         mniModificarExposicion.addActionListener(this);
@@ -57,7 +57,7 @@ public class MenuPrincipal implements WindowListener, ActionListener {
         mnuExposicion.add(mniModificarExposicion);
         mnuExposicion.add(mniConsultaExposicion);
 
-        // Agregar opciones de Visitantes
+        
         mniAltaVisitante.addActionListener(this);
         mniBajaVisitante.addActionListener(this);
         mniModificarVisitante.addActionListener(this);
@@ -67,19 +67,19 @@ public class MenuPrincipal implements WindowListener, ActionListener {
         mnuVisitante.add(mniModificarVisitante);
         mnuVisitante.add(mniConsultaVisitante);
 
-        // Agregar menús a la barra de menú
+       
         barraMenu.add(mnuMuseo);
         barraMenu.add(mnuExposicion);
         barraMenu.add(mnuVisitante);
 
-        // Aplicar restricciones de usuario
+        
         configurarPermisos();
 
         ventana.setVisible(true);
     }
 
     private void configurarPermisos() {
-        if (tipoUsuario == 0) { // Si el usuario es básico, deshabilitamos las opciones no permitidas
+        if (tipoUsuario == 0) { 
             mniBajaMuseo.setEnabled(false);
             mniModificarMuseo.setEnabled(false);
             mniConsultaMuseo.setEnabled(false);
