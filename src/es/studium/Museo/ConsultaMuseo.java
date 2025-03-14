@@ -8,7 +8,7 @@ public class ConsultaMuseo implements WindowListener, ActionListener {
 
     Frame ventana = new Frame("Consulta de Museos");
     TextArea txtArea = new TextArea();
-    Button btnExportar = new Button("Exportar a PDF"); // Botón agregado
+    Button btnExportar = new Button("Exportar a PDF"); 
 
     Modelo modelo = new Modelo();
     Connection connection = null;
@@ -30,7 +30,7 @@ public class ConsultaMuseo implements WindowListener, ActionListener {
 
         ventana.add(txtArea, constraints);
 
-        // Configurar botón Exportar
+        
         constraints.gridy = 2;
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
