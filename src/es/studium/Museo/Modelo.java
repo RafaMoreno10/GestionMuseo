@@ -177,7 +177,7 @@ public class Modelo {
     }
 
     public void rellenarChoiceVisitantes(Connection connection, Choice choice) {
-        choice.removeAll(); // Limpiamos antes de cargar
+        choice.removeAll(); 
         choice.add("Seleccionar un visitante...");
         try {
             Statement stmt = connection.createStatement();
