@@ -126,7 +126,7 @@ public class Modelo {
         return tipoUsuario;
     }
 
-    // Métodos añadidos para ModificarMuseo y ConsultaMuseo
+    
     public void modificarMuseo(String sentencia) {
         try {
             connection = conectar();
@@ -175,7 +175,7 @@ public class Modelo {
         }
         return altaCorrecta;
     }
- // Método corregido para rellenar el Choice con los visitantes
+
     public void rellenarChoiceVisitantes(Connection connection, Choice choice) {
         choice.removeAll(); // Limpiamos antes de cargar
         choice.add("Seleccionar un visitante...");
@@ -193,7 +193,7 @@ public class Modelo {
     }
 
 
-    // Método para eliminar un visitante
+    
     public boolean bajaVisitante(Connection connection, String idVisitante) {
         boolean resultado = false;
         try {
