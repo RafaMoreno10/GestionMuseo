@@ -13,7 +13,7 @@ public class BajaVisitante implements WindowListener, ActionListener {
     Dialog feedback = new Dialog(ventana, "Mensaje", true);
     Label mensaje = new Label("");
 
-    // Nuevo diálogo de confirmación
+ 
     Dialog confirmacion = new Dialog(ventana, "Confirmar Eliminación", true);
     Label lblConfirmacion = new Label("¿Está seguro de que quiere borrar este visitante?");
     Button btnSi = new Button("Sí");
@@ -37,7 +37,7 @@ public class BajaVisitante implements WindowListener, ActionListener {
         feedback.add(mensaje);
         feedback.addWindowListener(this);
 
-        // Configurar el cuadro de confirmación
+        
         confirmacion.setLayout(new FlowLayout());
         confirmacion.setSize(300, 100);
         confirmacion.add(lblConfirmacion);
@@ -47,7 +47,7 @@ public class BajaVisitante implements WindowListener, ActionListener {
         confirmacion.add(btnNo);
         confirmacion.addWindowListener(this);
 
-        // Cargar visitantes en el Choice
+        
         Modelo modelo = new Modelo();
         Connection connection = modelo.conectar();
         if (connection != null) {
@@ -67,21 +67,21 @@ public class BajaVisitante implements WindowListener, ActionListener {
             if (choVisitantes.getItemCount() > 0) {
                 String seleccionado = choVisitantes.getSelectedItem();
                 if (seleccionado != null && !seleccionado.isEmpty()) {
-                    idVisitanteSeleccionado = seleccionado.split(" - ")[0]; // Guardamos el ID antes de confirmar
-                    confirmacion.setVisible(true); // Mostrar el cuadro de confirmación
+                    idVisitanteSeleccionado = seleccionado.split(" - ")[0]; 
+                    confirmacion.setVisible(true); 
                 }
             } else {
                 mensaje.setText("No hay visitantes disponibles para borrar.");
                 feedback.setVisible(true);
             }
         } else if (actionEvent.getSource().equals(btnSi)) {
-            // Si el usuario confirma, se elimina
+            
             Modelo modelo = new Modelo();
             Connection connection = modelo.conectar();
             if (connection != null) {
                 if (modelo.bajaVisitante(connection, idVisitanteSeleccionado)) {
                     mensaje.setText("Baja correcta.");
-                    choVisitantes.remove(choVisitantes.getSelectedItem()); // Eliminar de la lista
+                    choVisitantes.remove(choVisitantes.getSelectedItem()); 
                 } else {
                     mensaje.setText("Error: No se puede eliminar, hay visitas asociadas.");
                 }
@@ -90,7 +90,7 @@ public class BajaVisitante implements WindowListener, ActionListener {
             }
             confirmacion.setVisible(false);
         } else if (actionEvent.getSource().equals(btnNo)) {
-            confirmacion.setVisible(false); // Cierra el cuadro si el usuario elige "No"
+            confirmacion.setVisible(false); 
         }
     }
 
