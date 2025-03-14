@@ -93,7 +93,7 @@ public class ModificarVisitante implements WindowListener, ActionListener {
             String email = emailVisitante.getText().trim();
             String dni = dniVisitante.getText().trim();
 
-            // Validaciones
+            
             if (nombre.isEmpty() || email.isEmpty() || dni.isEmpty()) {
                 mensaje.setText("Error: Campos vacíos");
                 feedback.setVisible(true);
@@ -118,7 +118,7 @@ public class ModificarVisitante implements WindowListener, ActionListener {
                 return;
             }
 
-            // Llamada al modelo para modificar
+            
             boolean exito = modelo.modificarVisitante(connection, idVisitante, nombre, email, dni);
             if (exito) {
                 mensaje.setText("Modificación Correcta");
