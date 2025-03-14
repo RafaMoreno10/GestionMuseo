@@ -1,4 +1,4 @@
-package es.studium.Museo; // Asegúrate de que coincide con el paquete de Modelo.java
+package es.studium.Museo; 
 
 import java.awt.*;
 import java.awt.event.*;
@@ -18,7 +18,7 @@ public class Login implements WindowListener, ActionListener {
 
     public Login() {
         ventana.setLayout(new FlowLayout());
-        ventana.setBackground(new Color(200, 230, 255)); // Azul pastel
+        ventana.setBackground(new Color(200, 230, 255)); 
         ventana.setSize(220,200);
         ventana.setResizable(false);
         ventana.add(lblUsuario);
@@ -65,7 +65,7 @@ public class Login implements WindowListener, ActionListener {
         if(actionEvent.getSource().equals(btnLimpiar)) {
             txtUsuario.setText("");
             txtClave.setText("");
-            txtUsuario.requestFocus(); // Se asegura de que el cursor vuelva al campo de usuario
+            txtUsuario.requestFocus(); 
         } else if(actionEvent.getSource().equals(btnAceptar)) {
             Modelo modelo = new Modelo();
             Connection connection = modelo.conectar();
@@ -79,7 +79,7 @@ public class Login implements WindowListener, ActionListener {
                     feedback.setVisible(true);
                 } else {
                     ventana.setVisible(false);
-                    new MenuPrincipal(tipoUsuario); // PASAR tipoUsuario al menú principal
+                    new MenuPrincipal(tipoUsuario); 
                 }
             }
         }
