@@ -30,7 +30,7 @@ public class BajaMuseo implements WindowListener, ActionListener {
         ventana.add(btnBorrar);
         ventana.addWindowListener(this);
 
-        // Configurar confirmación
+      
         confirmacion.setLayout(new FlowLayout());
         confirmacion.setSize(250, 100);
         confirmacion.add(lblConfirmacion);
@@ -39,14 +39,14 @@ public class BajaMuseo implements WindowListener, ActionListener {
         confirmacion.add(btnSi);
         confirmacion.add(btnNo);
 
-        // Configurar feedback
+        
         feedback.setLayout(new FlowLayout());
         feedback.setSize(250, 100);
         feedback.setResizable(false);
         feedback.add(mensaje);
         feedback.addWindowListener(this);
 
-        // Cargar museos
+   
         Modelo modelo = new Modelo();
         Connection connection = modelo.conectar();
         if (connection != null) {
